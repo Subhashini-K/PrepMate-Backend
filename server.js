@@ -11,23 +11,20 @@ const { protect } = require("./middlewares/authMiddleware");
 const { generateInterviewQuestions, generateConceptExplanation} = require("./controllers/aiController");
 
 const app = express();
+connectDB();
+app.use(express.json());
 
 //Middleware to handle CORS
 app.use(
     cors({
         origin: "https://prepmate.subhashini.site",
         methods: ["GET","POST", "PUT", "DELETE","OPTIONS"],
-        credentials:true
+        credentials:true,
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 );
 
 app.options("*", cors());
-
-connectDB()
-
-
-//Middleware
-app.use(express.json());
 
 //Routes
 app.use("/api/auth", authRoutes);
