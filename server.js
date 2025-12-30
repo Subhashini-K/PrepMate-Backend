@@ -16,12 +16,7 @@ app.use(express.json());
 
 //Middleware to handle CORS
 app.use(
-    cors({
-        origin: "https://prepmate.subhashini.site",
-        methods: ["GET","POST", "PUT", "DELETE","OPTIONS"],
-        credentials:true,
-        allowedHeaders: ["Content-Type", "Authorization"]
-    })
+    cors()
 );
 
 app.options("*", cors());
