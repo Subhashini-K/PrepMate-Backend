@@ -17,6 +17,7 @@ app.use(
     cors({
         origin: "https://prepmate.subhashini.site",
         methods: ["GET","POST", "PUT", "DELETE","OPTIONS"],
+        credentials:true
     })
 );
 
