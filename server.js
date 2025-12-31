@@ -19,8 +19,6 @@ app.use(
     cors()
 );
 
-app.options("*", cors());
-
 //Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
